@@ -163,7 +163,7 @@
       white-space: nowrap;
     }
     /* ── CTAs ── */
-    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; margin-top: 20px; }
     .btn { display: inline-block; text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 13px 26px; transition: all 0.18s; cursor: pointer; }
     .btn-red { background: var(--red); color: white; border: 1px solid var(--red); }
     .btn-red:hover { background: #c00016; border-color: #c00016; transform: translateY(-1px); }
@@ -532,6 +532,10 @@
       DÍAZ
     </h1>
     <p class="hero-role">Director Global · Fundador · Autor · TED Speaker</p>
+    <div class="cta-group">
+      <a href="https://talent-land.mx/" target="_blank" class="btn btn-red" onclick="fbq('track','Lead',{content_name:'Talent Land CTA'})">Agenda en Talent Land</a>
+      <a href="https://wa.me/525610016226?text=Hola%20Edson%2C%20te%20vi%20en%20Talent%20Land%202026%20y%20quiero%20platicar%20contigo" target="_blank" class="btn btn-ghost" onclick="fbq('track','Contact',{content_name:'WhatsApp CTA'})" style="border-color:rgba(37,211,102,0.5);color:#25D366;">💬 WhatsApp</a>
+    </div>
     <p class="hero-quote">
       El mercadólogo que llevó a <strong>Corona al trono mundial</strong>
       y convirtió a Victoria de la posición <strong>#8 a la #1 global en 4 años.</strong>
@@ -555,10 +559,6 @@
         <div class="stat-num">2<sup style="color:var(--red);font-size:22px;">GWR</sup></div>
         <div class="stat-label">Récords Guinness</div>
       </div>
-    </div>
-    <div class="cta-group">
-      <a href="https://talent-land.mx/" target="_blank" class="btn btn-red" onclick="fbq('track','Lead',{content_name:'Talent Land CTA'})">Agenda en Talent Land</a>
-      <a href="https://wa.me/525610016226?text=Hola%20Edson%2C%20te%20vi%20en%20Talent%20Land%202026%20y%20quiero%20platicar%20contigo" target="_blank" class="btn btn-ghost" onclick="fbq('track','Contact',{content_name:'WhatsApp CTA'})" style="border-color:rgba(37,211,102,0.5);color:#25D366;">💬 WhatsApp</a>
     </div>
   </div>
   <!-- FOTO — cambia el src="TU_FOTO_AQUI.jpg" por la URL o ruta de tu foto -->
