@@ -746,5 +746,63 @@
     <a href="mailto:edson@marketingtdi.com">Contacto</a>
   </div>
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/525610016226?text=Hola%20Edson%2C%20te%20vi%20en%20Talent%20Land%202026%20y%20quiero%20platicar%20contigo"
+   target="_blank"
+   id="wa-float"
+   onclick="fbq('track','Contact',{content_name:'WhatsApp Float'})"
+   aria-label="Escríbeme por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="#fff">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.471 2.027 7.774L0 32l8.473-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.764-1.847l-.485-.288-5.03 1.191 1.214-4.899-.317-.502A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.878c-.398-.199-2.355-1.162-2.72-1.294-.364-.133-.63-.199-.895.199-.265.398-1.028 1.294-1.26 1.56-.232.265-.464.298-.862.1-.398-.199-1.68-.62-3.2-1.977-1.183-1.056-1.98-2.36-2.213-2.758-.232-.398-.025-.613.175-.811.179-.178.398-.464.597-.696.199-.232.265-.398.398-.664.133-.265.066-.498-.033-.697-.1-.199-.895-2.158-1.227-2.955-.323-.774-.65-.669-.895-.681l-.763-.013c-.265 0-.696.1-.1060.498-.364.398-1.393 1.361-1.393 3.318 0 1.957 1.426 3.848 1.625 4.113.199.265 2.806 4.283 6.798 6.006.951.41 1.693.655 2.271.838.954.304 1.823.261 2.509.158.765-.114 2.355-.963 2.688-1.893.333-.93.333-1.727.232-1.893-.1-.166-.364-.265-.762-.464z"/>
+  </svg>
+  <span id="wa-tooltip">¡Escríbeme!</span>
+</a>
+
+<style>
+#wa-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  background: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: wa-pulse 2.5s infinite;
+}
+#wa-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.7), 0 2px 10px rgba(0,0,0,0.3);
+}
+#wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 1px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+#wa-float:hover #wa-tooltip { opacity: 1; }
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+</style>
+
 </body>
 </html>
