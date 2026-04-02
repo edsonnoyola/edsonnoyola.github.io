@@ -518,6 +518,9 @@
       .stat { padding: 10px 12px; }
       .stat-num { font-size: 24px; }
       .books-grid { grid-template-columns: repeat(2, 1fr); }
+      #brutalista-cta { padding: 48px 20px; }
+      #follow-sec { padding: 48px 20px; }
+      #follow-sec div[style*="display:flex"] { flex-direction: column; align-items: stretch; }
     }
   </style>
 </head>
@@ -731,6 +734,64 @@
     </a>
   </div>
 </div>
+<!-- ════════════════════ MKT BRUTALISTA DOWNLOAD ════════════════════ -->
+<section id="brutalista-cta" style="background:var(--red);padding:60px 40px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,18vw,200px);color:rgba(0,0,0,0.12);white-space:nowrap;pointer-events:none;line-height:1;">BRUTALISTA</div>
+  <div style="position:relative;z-index:1;max-width:700px;margin:0 auto;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px;">#1 en Amazon México</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,80px);line-height:1;color:#fff;margin:0 0 16px;">MKT Brutalista</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.85);line-height:1.7;margin:0 0 32px;max-width:520px;margin-left:auto;margin-right:auto;">Marketing para tiempos hostiles. El libro que le dice la verdad sobre cómo construir marcas que dominan cuando el mercado no perdona.</p>
+    <a href="https://www.amazon.com/Mkt-Brutalista-Marketing-tiempos-hostiles-ebook/dp/B0GL6ZD36R"
+       target="_blank"
+       onclick="fbq('track','Lead',{content_name:'MKT Brutalista Amazon'})"
+       style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;text-decoration:none;border:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.25);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L12 15M12 15L8 11M12 15L16 11"/><path d="M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg>
+      Consíguelo en Amazon
+    </a>
+    <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:1px;">KINDLE + FÍSICO DISPONIBLE</div>
+  </div>
+</section>
+
+<!-- ════════════════════ FOLLOW ON SOCIAL ════════════════════ -->
+<section id="follow-sec" style="background:var(--dark2);padding:60px 40px;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:14px;">Sígueme</div>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,60px);line-height:1;color:var(--white);margin:0 0 10px;">Contenido que no vas<br>a ver en otro lado.</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.5);margin:0 0 36px;letter-spacing:0.5px;">Marketing real · Casos brutales · IA aplicada · Sin filtro</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/edsonnoyola/"
+         target="_blank"
+         onclick="fbq('track','Lead',{content_name:'Follow Instagram'})"
+         class="follow-btn" data-net="ig"
+         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#E1306C';this.style.color='#E1306C'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Seguir en Instagram
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/edson-noyola-91179315/"
+         target="_blank"
+         onclick="fbq('track','Lead',{content_name:'Follow LinkedIn'})"
+         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#0A66C2';this.style.color='#0A66C2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        Conectar en LinkedIn
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/SoyEdsonNoyola/"
+         target="_blank"
+         onclick="fbq('track','Lead',{content_name:'Follow Facebook'})"
+         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#1877F2';this.style.color='#1877F2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        Seguir en Facebook
+      </a>
+
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════ FOOTER ════════════════════ -->
 <footer>
   <div class="footer-id">EDSON JAVIER NOYOLA DÍAZ</div>
