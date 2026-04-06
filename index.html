@@ -35,133 +35,30 @@
       --gray: #888;
       --white: #FFFFFF;
     }
-    body {
-      background: var(--dark);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.5;
-    }
+    body { background: var(--dark); color: var(--white); font-family: 'Inter', sans-serif; line-height: 1.5; }
+
     /* ─── HERO ─── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 55% 45%;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(229,0,26,0.18) 0%, transparent 60%);
-      z-index: 0;
-      pointer-events: none;
-    }
-    /* noise texture overlay */
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-    .hero-left {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 64px 48px 64px 64px;
-    }
-    .event-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(229,0,26,0.12);
-      border: 1px solid rgba(229,0,26,0.5);
-      color: #FF4455;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 2px;
-      width: fit-content;
-      margin-bottom: 36px;
-    }
-    .event-badge::before {
-      content: '';
-      width: 5px; height: 5px;
-      background: var(--red);
-      border-radius: 50%;
-      animation: blink 1.4s infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.2; }
-    }
-    .hero-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(56px, 6.5vw, 96px);
-      line-height: 0.88;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
+    .hero { position: relative; min-height: 100vh; display: grid; grid-template-columns: 55% 45%; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(229,0,26,0.18) 0%, transparent 60%); z-index: 0; pointer-events: none; }
+    .hero::after { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+    .hero-left { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 64px 48px 64px 64px; }
+    .event-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(229,0,26,0.12); border: 1px solid rgba(229,0,26,0.5); color: #FF4455; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 7px 16px; border-radius: 2px; width: fit-content; margin-bottom: 36px; }
+    .event-badge::before { content: ''; width: 5px; height: 5px; background: var(--red); border-radius: 50%; animation: blink 1.4s infinite; }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+    .hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 0.88; letter-spacing: 2px; margin-bottom: 10px; }
     .hero-name .accent { color: var(--red); }
-    .hero-role {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 32px;
-    }
-    .hero-quote {
-      font-size: clamp(13px, 1.3vw, 15px);
-      font-weight: 300;
-      color: rgba(255,255,255,0.72);
-      max-width: 460px;
-      margin-bottom: 24px;
-      line-height: 1.65;
-      border-left: 3px solid var(--red);
-      padding-left: 18px;
-    }
+    .hero-role { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--orange); margin-bottom: 32px; }
+    .hero-quote { font-size: clamp(13px, 1.3vw, 15px); font-weight: 300; color: rgba(255,255,255,0.72); max-width: 460px; margin-bottom: 24px; line-height: 1.65; border-left: 3px solid var(--red); padding-left: 18px; }
     .hero-quote strong { color: var(--white); font-weight: 700; }
+
     /* ── STATS ── */
-    .stats {
-      display: flex;
-      gap: 0;
-      margin-bottom: 28px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.07);
-      width: fit-content;
-    }
-    .stat {
-      padding: 18px 28px;
-      border-right: 1px solid rgba(255,255,255,0.07);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    .stats { display: flex; gap: 0; margin-bottom: 28px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); width: fit-content; }
+    .stat { padding: 18px 28px; border-right: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; align-items: center; }
     .stat:last-child { border-right: none; }
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 38px;
-      line-height: 1;
-      color: var(--white);
-    }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 38px; line-height: 1; color: var(--white); }
     .stat-num sup { color: var(--red); font-size: 22px; }
-    .stat-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-top: 3px;
-      white-space: nowrap;
-    }
+    .stat-label { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-top: 3px; white-space: nowrap; }
+
     /* ── CTAs ── */
     .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; margin-top: 20px; }
     .btn { display: inline-block; text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 13px 26px; transition: all 0.18s; cursor: pointer; }
@@ -169,321 +66,89 @@
     .btn-red:hover { background: #c00016; border-color: #c00016; transform: translateY(-1px); }
     .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
     .btn-ghost:hover { border-color: rgba(255,255,255,0.6); transform: translateY(-1px); }
+
     /* ── PHOTO SIDE ── */
-    .hero-right {
-      position: relative;
-      z-index: 2;
-    }
-    .photo-wrap {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    /* fade edges into background */
-    .photo-wrap::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 40%;
-      background: linear-gradient(to top, var(--dark) 0%, transparent 100%);
-      z-index: 3;
-    }
-    .photo-wrap::after {
-      content: '';
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 50%;
-      background: linear-gradient(to right, var(--dark) 0%, transparent 100%);
-      z-index: 3;
-    }
-    .speaker-photo {
-      width: 100%;
-      height: 100%;
-      min-height: 100vh;
-      object-fit: cover;
-      object-position: top center;
-      filter: grayscale(20%) contrast(1.08) brightness(0.95);
-      display: block;
-    }
-    .photo-placeholder {
-      display: none;
-      width: 100%;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
-      background: linear-gradient(160deg, #111 0%, #1a0a0a 100%);
-    }
-    .ph-initials {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 140px;
-      color: rgba(229,0,26,0.18);
-      line-height: 1;
-      letter-spacing: 8px;
-    }
-    .ph-hint {
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 1px;
-      max-width: 220px;
-      text-align: center;
-      line-height: 1.6;
-    }
-    .ph-hint strong {
-      color: var(--red);
-    }
-    /* red accent stroke */
-    .accent-stroke {
-      position: absolute;
-      right: 0;
-      top: 8%;
-      bottom: 8%;
-      width: 3px;
-      background: linear-gradient(to bottom, transparent, var(--red) 30%, var(--orange) 70%, transparent);
-      z-index: 4;
-    }
+    .hero-right { position: relative; z-index: 2; }
+    .photo-wrap { position: relative; width: 100%; height: 100%; overflow: hidden; }
+    .photo-wrap::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to top, var(--dark) 0%, transparent 100%); z-index: 3; }
+    .photo-wrap::after { content: ''; position: absolute; inset: 0 auto 0 0; width: 50%; background: linear-gradient(to right, var(--dark) 0%, transparent 100%); z-index: 3; }
+    .speaker-photo { width: 100%; height: 100%; min-height: 100vh; object-fit: cover; object-position: top center; filter: grayscale(20%) contrast(1.08) brightness(0.95); display: block; }
+    .photo-placeholder { display: none; width: 100%; min-height: 100vh; align-items: center; justify-content: center; flex-direction: column; gap: 16px; background: linear-gradient(160deg, #111 0%, #1a0a0a 100%); }
+    .ph-initials { font-family: 'Bebas Neue', sans-serif; font-size: 140px; color: rgba(229,0,26,0.18); line-height: 1; letter-spacing: 8px; }
+    .ph-hint { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; max-width: 220px; text-align: center; line-height: 1.6; }
+    .ph-hint strong { color: var(--red); }
+    .accent-stroke { position: absolute; right: 0; top: 8%; bottom: 8%; width: 3px; background: linear-gradient(to bottom, transparent, var(--red) 30%, var(--orange) 70%, transparent); z-index: 4; }
+
     /* ─── BADGES ROW ─── */
-    .badges-bar {
-      background: var(--red);
-      padding: 14px 64px;
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none;
-    }
+    .badges-bar { background: var(--red); padding: 14px 64px; display: flex; gap: 40px; align-items: center; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
     .badges-bar::-webkit-scrollbar { display: none; }
-    .badge-item {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-    .badge-item::before {
-      content: '★';
-      font-size: 12px;
-    }
+    .badge-item { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .badge-item::before { content: '★'; font-size: 12px; }
     .badge-sep { color: rgba(255,255,255,0.3); font-size: 18px; flex-shrink: 0; }
+
     /* ─── SECTION BASE ─── */
     .sec { padding: 80px 64px; border-top: 1px solid rgba(255,255,255,0.05); }
-    .sec-tag {
-      font-size: 9px; font-weight: 700; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--red); margin-bottom: 12px;
-    }
-    .sec-h {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(34px, 3.5vw, 52px);
-      line-height: 1;
-      margin-bottom: 28px;
-    }
+    .sec-tag { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+    .sec-h { font-family: 'Bebas Neue', sans-serif; font-size: clamp(34px, 3.5vw, 52px); line-height: 1; margin-bottom: 28px; }
+
     /* ─── ABOUT ─── */
-    .about-cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px 64px;
-      max-width: 920px;
-    }
-    .about-p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.68);
-      line-height: 1.85;
-    }
+    .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 64px; max-width: 920px; }
+    .about-p { font-size: 15px; color: rgba(255,255,255,0.68); line-height: 1.85; }
     .about-p strong { color: var(--white); font-weight: 700; }
+
     /* ─── BRANDS ─── */
-    .brands-sec {
-      padding: 60px 64px;
-      background: var(--dark2);
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .brands-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-    .brand-chip {
-      padding: 9px 18px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.75);
-      background: rgba(255,255,255,0.04);
-      transition: all 0.18s;
-      cursor: default;
-    }
-    .brand-chip:hover {
-      border-color: rgba(229,0,26,0.5);
-      background: rgba(229,0,26,0.08);
-      color: var(--white);
-    }
-    .brand-chip.hero-brand {
-      border-color: rgba(229,0,26,0.45);
-      background: rgba(229,0,26,0.1);
-      color: var(--white);
-    }
+    .brands-sec { padding: 60px 64px; background: var(--dark2); border-top: 1px solid rgba(255,255,255,0.05); }
+    .brands-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .brand-chip { padding: 9px 18px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); background: rgba(255,255,255,0.04); transition: all 0.18s; cursor: default; }
+    .brand-chip:hover { border-color: rgba(229,0,26,0.5); background: rgba(229,0,26,0.08); color: var(--white); }
+    .brand-chip.hero-brand { border-color: rgba(229,0,26,0.45); background: rgba(229,0,26,0.1); color: var(--white); }
+
     /* ─── SESSION ─── */
-    .session-sec {
-      padding: 80px 64px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      position: relative;
-      overflow: hidden;
-    }
-    .bg-word {
-      position: absolute;
-      right: -20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 200px;
-      line-height: 0.85;
-      color: rgba(255,255,255,0.018);
-      letter-spacing: 6px;
-      pointer-events: none;
-      user-select: none;
-    }
-    .session-card {
-      position: relative;
-      background: rgba(229,0,26,0.06);
-      border: 1px solid rgba(229,0,26,0.2);
-      padding: 52px 52px 52px 60px;
-      max-width: 820px;
-    }
-    .session-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: linear-gradient(to bottom, var(--red), var(--orange));
-    }
-    .session-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(30px, 3.8vw, 54px);
-      line-height: 1;
-      margin-bottom: 20px;
-    }
+    .session-sec { padding: 80px 64px; border-top: 1px solid rgba(255,255,255,0.05); position: relative; overflow: hidden; }
+    .bg-word { position: absolute; right: -20px; top: 50%; transform: translateY(-50%); font-family: 'Bebas Neue', sans-serif; font-size: 200px; line-height: 0.85; color: rgba(255,255,255,0.018); letter-spacing: 6px; pointer-events: none; user-select: none; }
+    .session-card { position: relative; background: rgba(229,0,26,0.06); border: 1px solid rgba(229,0,26,0.2); padding: 52px 52px 52px 60px; max-width: 820px; }
+    .session-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--red), var(--orange)); }
+    .session-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(30px, 3.8vw, 54px); line-height: 1; margin-bottom: 20px; }
     .session-title em { color: var(--red); font-style: normal; }
-    .session-desc {
-      font-size: 15px;
-      color: rgba(255,255,255,0.62);
-      line-height: 1.8;
-      margin-bottom: 36px;
-      max-width: 640px;
-    }
+    .session-desc { font-size: 15px; color: rgba(255,255,255,0.62); line-height: 1.8; margin-bottom: 36px; max-width: 640px; }
     .takeaways { list-style: none; display: flex; flex-direction: column; gap: 13px; }
-    .takeaways li {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.78);
-      line-height: 1.65;
-    }
+    .takeaways li { display: flex; align-items: flex-start; gap: 14px; font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.65; }
     .takeaways li .arrow { color: var(--red); font-weight: 900; flex-shrink: 0; }
+
     /* ─── BOOKS ─── */
-    .books-sec {
-      padding: 64px 64px;
-      background: var(--dark2);
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
-    .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 32px;
-    }
-    .book-card {
-      background: var(--dark3);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 0;
-      transition: all 0.2s;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .book-card:hover {
-      border-color: rgba(229,0,26,0.5);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(229,0,26,0.15);
-    }
-    .book-cover {
-      width: 100%;
-      aspect-ratio: 2/3;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      filter: brightness(0.95);
-    }
-    .book-info {
-      padding: 16px 18px 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .book-badge {
-      position: absolute;
-      top: 10px; right: 10px;
-      background: var(--red);
-      color: white;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 14px;
-      letter-spacing: 1px;
-      padding: 3px 8px;
-      z-index: 2;
-    }
-    .book-name {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 17px;
-      line-height: 1.1;
-      margin-bottom: 6px;
-      color: var(--white);
-    }
-    .book-note {
-      font-size: 10px;
-      color: var(--gray);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+    .books-sec { padding: 64px 64px; background: var(--dark2); border-top: 1px solid rgba(255,255,255,0.05); }
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 32px; }
+    .book-card { background: var(--dark3); border: 1px solid rgba(255,255,255,0.07); padding: 0; transition: all 0.2s; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .book-card:hover { border-color: rgba(229,0,26,0.5); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(229,0,26,0.15); }
+    .book-cover { width: 100%; aspect-ratio: 2/3; object-fit: cover; object-position: top; display: block; filter: brightness(0.95); }
+    .book-info { padding: 16px 18px 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .book-badge { position: absolute; top: 10px; right: 10px; background: var(--red); color: white; font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 1px; padding: 3px 8px; z-index: 2; }
+    .book-name { font-family: 'Bebas Neue', sans-serif; font-size: 17px; line-height: 1.1; margin-bottom: 6px; color: var(--white); }
+    .book-note { font-size: 10px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ─── NEWSLETTER LEADS ─── */
+    .newsletter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; }
+    .nl-form { position: relative; background: rgba(229,0,26,0.06); border: 1px solid rgba(229,0,26,0.2); padding: 40px 40px 36px 48px; }
+    .nl-form::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--red), var(--orange)); }
+    .nl-label { display: block; font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
+    .nl-input { width: 100%; padding: 12px 14px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); color: #fff; font-family: 'Inter', sans-serif; font-size: 15px; outline: none; transition: border-color 0.18s; box-sizing: border-box; }
+    .nl-input:focus { border-color: rgba(229,0,26,0.6); }
+    .nl-input::placeholder { color: rgba(255,255,255,0.25); }
+    .nl-btn { width: 100%; padding: 14px; background: var(--red); color: #fff; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--red); cursor: pointer; transition: all 0.18s; }
+    .nl-btn:hover { background: #c00016; border-color: #c00016; transform: translateY(-1px); }
+    .nl-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .nl-success { display: none; position: relative; background: rgba(229,0,26,0.06); border: 1px solid rgba(229,0,26,0.3); padding: 40px; text-align: center; }
+    .nl-success::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--red), var(--orange)); }
+    .nl-error { display: none; background: rgba(229,0,26,0.08); border: 1px solid rgba(229,0,26,0.3); padding: 12px 16px; margin-top: 8px; }
+
     /* ─── FOOTER ─── */
-    footer {
-      padding: 36px 64px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-    .footer-id {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
-      color: rgba(255,255,255,0.25);
-      letter-spacing: 3px;
-    }
-    .footer-date {
-      font-size: 10px;
-      color: rgba(255,255,255,0.2);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+    footer { padding: 36px 64px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-id { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: rgba(255,255,255,0.25); letter-spacing: 3px; }
+    .footer-date { font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 2px; text-transform: uppercase; }
     .socials { display: flex; gap: 20px; }
-    .socials a {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: rgba(255,255,255,0.28);
-      text-decoration: none; transition: color 0.18s;
-    }
+    .socials a { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.28); text-decoration: none; transition: color 0.18s; }
     .socials a:hover { color: var(--red); }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 800px) {
       .hero { grid-template-columns: 1fr; }
@@ -494,7 +159,6 @@
       .hero-name { font-size: clamp(52px, 14vw, 72px); margin-bottom: 8px; }
       .hero-role { font-size: 9px; letter-spacing: 2px; margin-bottom: 18px; }
       .hero-quote { font-size: 13px; margin-bottom: 24px; }
-      /* Stats: scroll horizontal en móvil */
       .stats { overflow-x: auto; width: 100%; -webkit-overflow-scrolling: touch; }
       .stat { padding: 12px 16px; }
       .stat-num { font-size: 28px; }
@@ -503,7 +167,6 @@
       .btn { text-align: center; padding: 14px 20px; font-size: 10px; }
       .sec, .brands-sec, .session-sec, .books-sec { padding: 40px 20px; }
       .about-cols { grid-template-columns: 1fr; gap: 24px; }
-      /* Guinness grid: 1 columna en móvil */
       .guinness-grid { grid-template-columns: 1fr !important; }
       .session-card { padding: 24px 20px 24px 28px; }
       .session-title { font-size: clamp(26px, 7vw, 38px); }
@@ -512,6 +175,9 @@
       footer { flex-direction: column; padding: 28px 20px; text-align: center; }
       .socials { justify-content: center; flex-wrap: wrap; gap: 14px; }
       .bg-word { font-size: 100px; }
+      /* Newsletter */
+      .newsletter-grid { grid-template-columns: 1fr; gap: 32px; }
+      #newsletter { padding: 48px 20px !important; }
     }
     @media (max-width: 400px) {
       .hero-name { font-size: 48px; }
@@ -525,6 +191,7 @@
   </style>
 </head>
 <body>
+
 <!-- ════════════════════ HERO ════════════════════ -->
 <section class="hero">
   <div class="hero-left">
@@ -536,14 +203,11 @@
     </h1>
     <p class="hero-role">Director Global · Fundador · Autor · TED Speaker</p>
     <div class="cta-group">
-      <a href="https://talent-land.mx/" target="_blank" class="btn btn-red" onclick="fbq('track','Lead',{content_name:'Talent Land CTA'})">Agenda en Talent Land</a>
+      <a href="https://agenda.talent-land.mx/agenda/mauricio-tamayo" target="_blank" class="btn btn-red" onclick="fbq('track','Lead',{content_name:'Talent Land CTA'})">Ver mi agenda en Talent Land</a>
       <a href="https://wa.me/525610016226?text=Hola%20Edson%2C%20te%20vi%20en%20Talent%20Land%202026%20y%20quiero%20platicar%20contigo" target="_blank" class="btn btn-ghost" onclick="fbq('track','Contact',{content_name:'WhatsApp CTA'})" style="border-color:rgba(37,211,102,0.5);color:#25D366;">💬 WhatsApp</a>
     </div>
     <p class="hero-quote">
-      El mercadólogo que llevó a <strong>Corona al trono mundial</strong>
-      y convirtió a Victoria de la posición <strong>#8 a la #1 global en 4 años.</strong>
-      Ahora viene a decirte cómo la IA va a reescribir las reglas
-      — y por qué el marketing "bonito" ya está muerto.
+      El mercadólogo que llevó a <strong>Corona al trono mundial</strong> y convirtió a Victoria de la posición <strong>#8 a la #1 global en 4 años.</strong> Ahora viene a decirte cómo la IA va a reescribir las reglas — y por qué el marketing "bonito" ya está muerto.
     </p>
     <div class="stats">
       <div class="stat">
@@ -564,17 +228,11 @@
       </div>
     </div>
   </div>
-  <!-- FOTO — cambia el src="TU_FOTO_AQUI.jpg" por la URL o ruta de tu foto -->
   <div class="hero-right">
     <div class="photo-wrap">
       <div class="accent-stroke"></div>
-      <img
-        class="speaker-photo"
-        id="edsonPhoto"
-        src="edson.jpg"
-        alt="Edson Javier Noyola Díaz"
-        onerror="this.src='https://conecta.tec.mx/sites/default/files/inline-images/edson-noyola-mercadotecnia-marketing-zacatecas-tec-de-monterrey-zacatecano-exatec.webp'; this.onerror=function(){this.style.display='none'; document.querySelector('.photo-placeholder').style.display='flex';};"
-      />
+      <img class="speaker-photo" id="edsonPhoto" src="edson.jpg" alt="Edson Javier Noyola Díaz"
+        onerror="this.src='https://conecta.tec.mx/sites/default/files/inline-images/edson-noyola-mercadotecnia-marketing-zacatecas-tec-de-monterrey-zacatecano-exatec.webp'; this.onerror=function(){this.style.display='none'; document.querySelector('.photo-placeholder').style.display='flex';};" />
       <div class="photo-placeholder">
         <div class="ph-initials">EN</div>
         <div class="ph-hint">📸 Guarda tu foto como <strong>edson.jpg</strong> en esta misma carpeta</div>
@@ -582,6 +240,7 @@
     </div>
   </div>
 </section>
+
 <!-- ════════════════════ BADGES BAR ════════════════════ -->
 <div class="badges-bar">
   <span class="badge-item">2× Récord Guinness · Cerveza Victoria</span>
@@ -602,32 +261,21 @@
   <span class="badge-sep">·</span>
   <span class="badge-item">MBA + MMT · Kellogg · Notre Dame</span>
 </div>
+
 <!-- ════════════════════ ABOUT ════════════════════ -->
 <section class="sec">
   <div class="sec-tag">Quién es</div>
   <h2 class="sec-h">El Marketing Brutalista<br>tiene nombre y apellido.</h2>
   <div class="about-cols">
     <p class="about-p">
-      Edson Noyola no habla de marketing desde un aula. Lo habla desde las trincheras.
-      Tomó a <strong>Cerveza Victoria cuando era la #8 del mundo</strong> y la convirtió
-      en la <strong>#1 global</strong> — con <strong>2 Récords Guinness</strong> bajo el brazo
-      gracias a activaciones masivas de <strong>Victoria Tradición y Herencia</strong>.
-      Fue <strong>Director Global de Corona</strong> dentro de Grupo Modelo / AB InBev
-      y ha documentado <strong>$280M+ en valor de marca</strong> construido a través de
-      <strong>47 empresas en LATAM y el mercado US Hispanic.</strong>
+      Edson Noyola no habla de marketing desde un aula. Lo habla desde las trincheras. Tomó a <strong>Cerveza Victoria cuando era la #8 del mundo</strong> y la convirtió en la <strong>#1 global</strong> — con <strong>2 Récords Guinness</strong> bajo el brazo gracias a activaciones masivas de <strong>Victoria Tradición y Herencia</strong>. Fue <strong>Director Global de Corona</strong> dentro de Grupo Modelo / AB InBev y ha documentado <strong>$280M+ en valor de marca</strong> construido a través de <strong>47 empresas en LATAM y el mercado US Hispanic.</strong>
     </p>
     <p class="about-p">
-      Fue portada de <strong>Expansión</strong> como <strong>"Monstruo de la Mercadotecnia"</strong>,
-      listado en los <strong>100 Líderes del Marketing de Merca 2.0</strong> y reconocido con el
-      <strong>Premio Dorado en los Latin American Effie Awards</strong>. Es <strong>TED Speaker</strong>,
-      fundador de <strong>Tlapalería de Ideas</strong> con presencia en México, Guatemala y Colombia,
-      y autor de <strong>4 libros #1 en Amazon México.</strong>
-      Cuenta con <strong>MBA + Maestría en Marketing</strong> por el Tec de Monterrey
-      y estudios ejecutivos en <strong>Kellogg School of Management</strong> y
-      <strong>University of Notre Dame.</strong>
+      Fue portada de <strong>Expansión</strong> como <strong>"Monstruo de la Mercadotecnia"</strong>, listado en los <strong>100 Líderes del Marketing de Merca 2.0</strong> y reconocido con el <strong>Premio Dorado en los Latin American Effie Awards</strong>. Es <strong>TED Speaker</strong>, fundador de <strong>Tlapalería de Ideas</strong> con presencia en México, Guatemala y Colombia, y autor de <strong>4 libros #1 en Amazon México.</strong> Cuenta con <strong>MBA + Maestría en Marketing</strong> por el Tec de Monterrey y estudios ejecutivos en <strong>Kellogg School of Management</strong> y <strong>University of Notre Dame.</strong>
     </p>
   </div>
 </section>
+
 <!-- ════════════════════ GUINNESS RECORDS ════════════════════ -->
 <section class="sec" style="padding-top:60px;padding-bottom:60px;background:var(--dark2);">
   <div class="sec-tag">Récords Mundiales</div>
@@ -647,6 +295,7 @@
     </div>
   </div>
 </section>
+
 <!-- ════════════════════ BRANDS ════════════════════ -->
 <div class="brands-sec">
   <div class="sec-tag">Ha construido y transformado</div>
@@ -671,6 +320,7 @@
     <div class="brand-chip">Arzobispado de México</div>
   </div>
 </div>
+
 <!-- ════════════════════ SESSION ════════════════════ -->
 <section class="session-sec">
   <div class="bg-word">BRUTALISTA</div>
@@ -682,9 +332,7 @@
       Domina o Desaparece.
     </h3>
     <p class="session-desc">
-      No es una charla de tendencias. Es una descarga directa de cómo construir marcas
-      que dominan cuando los mercados son hostiles, los presupuestos ajustados y la IA cambia
-      las reglas cada semana. Edson llevó marcas al #1 mundial sin excusas — y te dice cómo.
+      No es una charla de tendencias. Es una descarga directa de cómo construir marcas que dominan cuando los mercados son hostiles, los presupuestos ajustados y la IA cambia las reglas cada semana. Edson llevó marcas al #1 mundial sin excusas — y te dice cómo.
     </p>
     <ul class="takeaways">
       <li><span class="arrow">→</span> La metodología real detrás de posicionar una marca al #1 mundial — aplicada con IA hoy</li>
@@ -695,6 +343,87 @@
     </ul>
   </div>
 </section>
+
+<!-- ════════════════════ NEWSLETTER / CAPTURA DE LEADS ════════════════════ -->
+<!--
+  ⚠️  PARA ACTIVAR EL FORMULARIO:
+  1. Crea cuenta gratis en brevo.com
+  2. Ve a Contacts → Lists → Crea una lista → Anota su ID (número)
+  3. Ve a SMTP & API → API Keys → Genera un API Key
+  4. Reemplaza los valores en BREVO_CONFIG abajo (cerca del </body>)
+  5. Sube tu ebook a Google Drive → Comparte → Copia link de descarga
+  6. Guarda este archivo y súbelo a GitHub
+-->
+<section id="newsletter" style="padding:80px 64px;border-top:1px solid rgba(255,255,255,0.05);background:var(--dark2);position:relative;overflow:hidden;">
+  <div style="position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:200px;line-height:0.85;color:rgba(255,255,255,0.018);letter-spacing:6px;pointer-events:none;user-select:none;">LEADS</div>
+
+  <div style="max-width:900px;position:relative;z-index:1;">
+    <div class="sec-tag">Newsletter · Ebook Gratis</div>
+    <h2 class="sec-h">Marketing que no te van<br>a enseñar en ningún MBA.</h2>
+
+    <div class="newsletter-grid">
+      <!-- Columna izquierda: Propuesta de valor -->
+      <div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:28px;">
+          Descarga gratis el ebook <strong style="color:var(--white);">MKT Brutalista: Casos de Trinchera</strong> y recibe cada semana estrategias reales de growth, IA y automatización que Edson aplica con sus clientes en LATAM.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;font-size:14px;color:rgba(255,255,255,0.72);line-height:1.6;">
+            <span style="color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px;">→</span>
+            Ebook exclusivo con casos reales — descarga inmediata
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;font-size:14px;color:rgba(255,255,255,0.72);line-height:1.6;">
+            <span style="color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px;">→</span>
+            Newsletter semanal: estrategia sin filtro, sin adornos
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;font-size:14px;color:rgba(255,255,255,0.72);line-height:1.6;">
+            <span style="color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px;">→</span>
+            IA + automatización aplicada a marketing real en LATAM
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;font-size:14px;color:rgba(255,255,255,0.72);line-height:1.6;">
+            <span style="color:var(--red);font-weight:900;flex-shrink:0;margin-top:1px;">→</span>
+            Sin spam. Nunca. Te lo juro.
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Formulario -->
+      <div>
+        <form id="leadForm" onsubmit="submitLead(event)" class="nl-form">
+          <div style="display:flex;flex-direction:column;gap:18px;">
+            <div>
+              <label class="nl-label">Nombre</label>
+              <input type="text" id="lead-name" class="nl-input" placeholder="Tu nombre" required>
+            </div>
+            <div>
+              <label class="nl-label">Correo electrónico</label>
+              <input type="email" id="lead-email" class="nl-input" placeholder="tu@correo.com" required>
+            </div>
+            <button type="submit" id="submitBtn" class="nl-btn">
+              Quiero el ebook gratis →
+            </button>
+          </div>
+          <p style="color:rgba(255,255,255,0.22);font-size:10px;letter-spacing:0.5px;margin:14px 0 0;line-height:1.6;">
+            Al registrarte aceptas recibir emails de Edson Noyola. Cancela cuando quieras.
+          </p>
+        </form>
+
+        <div id="successMsg" class="nl-success">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:60px;color:var(--red);line-height:1;letter-spacing:2px;">LISTO.</div>
+          <p style="color:rgba(255,255,255,0.65);font-size:14px;line-height:1.75;margin:12px 0 0;">
+            Revisa tu correo — el ebook va en camino.<br>
+            Si no lo ves en 5 minutos, revisa spam.
+          </p>
+        </div>
+
+        <div id="errorMsg" class="nl-error">
+          <p style="color:#ff6b6b;font-size:13px;margin:0;">Algo falló. Intenta de nuevo o escríbeme por WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════════════════ LIBROS ════════════════════ -->
 <div class="books-sec">
   <div class="sec-tag">Autor</div>
@@ -734,6 +463,7 @@
     </a>
   </div>
 </div>
+
 <!-- ════════════════════ MKT BRUTALISTA DOWNLOAD ════════════════════ -->
 <section id="brutalista-cta" style="background:var(--red);padding:60px 40px;text-align:center;position:relative;overflow:hidden;">
   <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,18vw,200px);color:rgba(0,0,0,0.12);white-space:nowrap;pointer-events:none;line-height:1;">BRUTALISTA</div>
@@ -741,10 +471,7 @@
     <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:16px;">#1 en Amazon México</div>
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,6vw,80px);line-height:1;color:#fff;margin:0 0 16px;">MKT Brutalista</h2>
     <p style="font-size:15px;color:rgba(255,255,255,0.85);line-height:1.7;margin:0 0 32px;max-width:520px;margin-left:auto;margin-right:auto;">Marketing para tiempos hostiles. El libro que le dice la verdad sobre cómo construir marcas que dominan cuando el mercado no perdona.</p>
-    <a href="https://www.amazon.com/Mkt-Brutalista-Marketing-tiempos-hostiles-ebook/dp/B0GL6ZD36R"
-       target="_blank"
-       onclick="fbq('track','Lead',{content_name:'MKT Brutalista Amazon'})"
-       style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;text-decoration:none;border:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.25);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <a href="https://www.amazon.com/Mkt-Brutalista-Marketing-tiempos-hostiles-ebook/dp/B0GL6ZD36R" target="_blank" onclick="fbq('track','Lead',{content_name:'MKT Brutalista Amazon'})" style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red);font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;text-decoration:none;border:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.25);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L12 15M12 15L8 11M12 15L16 11"/><path d="M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/></svg>
       Consíguelo en Amazon
     </a>
@@ -759,44 +486,22 @@
     <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,60px);line-height:1;color:var(--white);margin:0 0 10px;">Contenido que no vas<br>a ver en otro lado.</h2>
     <p style="font-size:13px;color:rgba(255,255,255,0.5);margin:0 0 36px;letter-spacing:0.5px;">Marketing real · Casos brutales · IA aplicada · Sin filtro</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/edsonnoyola/"
-         target="_blank"
-         onclick="fbq('track','Lead',{content_name:'Follow Instagram'})"
-         class="follow-btn" data-net="ig"
-         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#E1306C';this.style.color='#E1306C'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+      <a href="https://www.instagram.com/edsonnoyola/" target="_blank" onclick="fbq('track','Lead',{content_name:'Follow Instagram'})" class="follow-btn" data-net="ig" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#E1306C';this.style.color='#E1306C'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
         Seguir en Instagram
       </a>
-
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/edson-noyola-91179315/"
-         target="_blank"
-         onclick="fbq('track','Lead',{content_name:'Follow LinkedIn'})"
-         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#0A66C2';this.style.color='#0A66C2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+      <a href="https://www.linkedin.com/in/edson-noyola-91179315/" target="_blank" onclick="fbq('track','Lead',{content_name:'Follow LinkedIn'})" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#0A66C2';this.style.color='#0A66C2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         Conectar en LinkedIn
       </a>
-
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/SoyEdsonNoyola/"
-         target="_blank"
-         onclick="fbq('track','Lead',{content_name:'Follow Facebook'})"
-         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#1877F2';this.style.color='#1877F2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+      <a href="https://www.facebook.com/SoyEdsonNoyola/" target="_blank" onclick="fbq('track','Lead',{content_name:'Follow Facebook'})" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#1877F2';this.style.color='#1877F2'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
         Seguir en Facebook
       </a>
-
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@edson.noyola"
-         target="_blank"
-         onclick="fbq('track','Lead',{content_name:'Follow TikTok'})"
-         style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#69C9D0';this.style.color='#69C9D0'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
+      <a href="https://www.tiktok.com/@edson.noyola" target="_blank" onclick="fbq('track','Lead',{content_name:'Follow TikTok'})" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border:1.5px solid rgba(255,255,255,0.15);color:var(--white);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;background:transparent;" onmouseover="this.style.borderColor='#69C9D0';this.style.color='#69C9D0'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--white)'">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.84 1.56V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
         Seguir en TikTok
       </a>
-
     </div>
   </div>
 </section>
@@ -820,8 +525,7 @@
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/525610016226?text=Hola%20Edson%2C%20te%20vi%20en%20Talent%20Land%202026%20y%20quiero%20platicar%20contigo"
-   target="_blank"
-   id="wa-float"
+   target="_blank" id="wa-float"
    onclick="fbq('track','Contact',{content_name:'WhatsApp Float'})"
    aria-label="Escríbeme por WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="30" height="30" fill="#fff">
@@ -831,49 +535,95 @@
 </a>
 
 <style>
-#wa-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  background: #25D366;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.5), 0 2px 8px rgba(0,0,0,0.3);
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  animation: wa-pulse 2.5s infinite;
-}
-#wa-float:hover {
-  transform: scale(1.12);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.7), 0 2px 10px rgba(0,0,0,0.3);
-}
-#wa-tooltip {
-  position: absolute;
-  right: 70px;
-  background: #111;
-  color: #fff;
-  font-size: 12px;
-  font-family: 'Space Grotesk', sans-serif;
-  letter-spacing: 1px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-#wa-float:hover #wa-tooltip { opacity: 1; }
-@keyframes wa-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-  70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
+  #wa-float {
+    position: fixed; bottom: 28px; right: 28px; z-index: 9999;
+    background: #25D366; border-radius: 50%; width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5), 0 2px 8px rgba(0,0,0,0.3);
+    text-decoration: none; transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: wa-pulse 2.5s infinite;
+  }
+  #wa-float:hover { transform: scale(1.12); box-shadow: 0 6px 28px rgba(37,211,102,0.7), 0 2px 10px rgba(0,0,0,0.3); }
+  #wa-tooltip {
+    position: absolute; right: 70px; background: #111; color: #fff;
+    font-size: 12px; font-family: 'Space Grotesk', sans-serif; letter-spacing: 1px;
+    padding: 6px 12px; border-radius: 6px; white-space: nowrap;
+    opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+  }
+  #wa-float:hover #wa-tooltip { opacity: 1; }
+  @keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
 </style>
+
+<!-- ════════════════════ SCRIPT BREVO ════════════════════ -->
+<script>
+  // ⚠️  REEMPLAZA ESTOS 3 VALORES CON LOS TUYOS ANTES DE SUBIR A GITHUB
+  const BREVO_CONFIG = {
+    apiKey:   "TU_API_KEY_DE_BREVO",  // brevo.com → Mi cuenta → SMTP & API → API Keys
+    listId:   0,                       // brevo.com → Contacts → Lists → (número del ID)
+    ebookUrl: "URL_DE_TU_EBOOK"       // Google Drive → Compartir → Link de descarga directa
+  };
+
+  async function submitLead(event) {
+    event.preventDefault();
+    const btn    = document.getElementById('submitBtn');
+    const nombre = document.getElementById('lead-name').value.trim();
+    const email  = document.getElementById('lead-email').value.trim();
+
+    // Estado de carga
+    btn.textContent = 'Procesando...';
+    btn.disabled = true;
+    document.getElementById('errorMsg').style.display = 'none';
+
+    try {
+      const res = await fetch('https://api.brevo.com/v3/contacts', {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'api-key': BREVO_CONFIG.apiKey,
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          attributes: {
+            FIRSTNAME: nombre.split(' ')[0],
+            LASTNAME:  nombre.split(' ').slice(1).join(' ') || ''
+          },
+          listIds: [BREVO_CONFIG.listId],
+          updateEnabled: true
+        })
+      });
+
+      if ([200, 201, 204].includes(res.status)) {
+        // ✅ Éxito
+        document.getElementById('leadForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+
+        // Trackear en Meta Pixel
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'Lead', { content_name: 'Newsletter Ebook' });
+        }
+
+        // Abrir ebook después de 1.5 seg
+        if (BREVO_CONFIG.ebookUrl && BREVO_CONFIG.ebookUrl !== 'URL_DE_TU_EBOOK') {
+          setTimeout(() => window.open(BREVO_CONFIG.ebookUrl, '_blank'), 1500);
+        }
+
+      } else {
+        throw new Error('Status: ' + res.status);
+      }
+
+    } catch (err) {
+      console.error('Brevo error:', err);
+      document.getElementById('errorMsg').style.display = 'block';
+      btn.textContent = 'Quiero el ebook gratis →';
+      btn.disabled = false;
+    }
+  }
+</script>
 
 </body>
 </html>
