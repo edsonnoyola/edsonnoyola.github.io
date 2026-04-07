@@ -598,7 +598,54 @@
       });
 
       if ([200, 201, 204].includes(res.status)) {
-        // ✅ Éxito
+        // ✅ Éxito — enviar email transaccional con el ebook
+        const firstName = nombre.split(' ')[0];
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'api-key': BREVO_CONFIG.apiKey,
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            sender: { name: 'Edson Noyola', email: 'edson@marketingtdi.com' },
+            to: [{ email: email, name: nombre }],
+            subject: '🔴 Tu ebook Marketing Brutalista — Talent Land 2026',
+            htmlContent: `<!DOCTYPE html><html><body style="margin:0;padding:0;background:#0A0A0A;font-family:Arial,sans-serif;color:#ffffff;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#0A0A0A;">
+<tr><td align="center" style="padding:40px 20px;">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+  <tr><td style="background:#E5001A;padding:4px 0;"></td></tr>
+  <tr><td style="background:#111111;padding:40px 40px 32px;">
+    <p style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#E5001A;margin:0 0 16px;">Marketing Brutalista · Talent Land 2026</p>
+    <h1 style="font-size:32px;font-weight:900;line-height:1.1;margin:0 0 24px;color:#ffffff;">${firstName},<br>aquí está tu ebook.</h1>
+    <p style="font-size:15px;color:rgba(255,255,255,0.72);line-height:1.7;margin:0 0 32px;">
+      Capítulo 01 · <strong style="color:#fff;">El Miedo Como Estrategia</strong><br>
+      Capítulo 09 · <strong style="color:#fff;">Cómo Aplicar el Marketing Brutalista</strong><br>
+      + Manifiesto Final
+    </p>
+    <table cellpadding="0" cellspacing="0"><tr><td style="background:#E5001A;">
+      <a href="${BREVO_CONFIG.ebookUrl}" style="display:inline-block;padding:16px 32px;color:#ffffff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">
+        → DESCARGAR EBOOK GRATIS
+      </a>
+    </td></tr></table>
+    <p style="font-size:12px;color:rgba(255,255,255,0.35);margin:32px 0 0;border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;">
+      Si el botón no funciona, copia este link:<br>
+      <a href="${BREVO_CONFIG.ebookUrl}" style="color:#E5001A;">${BREVO_CONFIG.ebookUrl}</a>
+    </p>
+  </td></tr>
+  <tr><td style="background:#E5001A;padding:4px 0;"></td></tr>
+  <tr><td style="background:#0A0A0A;padding:20px 40px;">
+    <p style="font-size:10px;color:rgba(255,255,255,0.2);letter-spacing:1px;text-transform:uppercase;margin:0;">
+      Edson Noyola Díaz · edsonnoyola.com · No spam. Nunca.
+    </p>
+  </td></tr>
+</table>
+</td></tr></table>
+</body></html>`
+          })
+        });
+
         document.getElementById('leadForm').style.display = 'none';
         document.getElementById('successMsg').style.display = 'block';
 
@@ -607,7 +654,7 @@
           fbq('track', 'Lead', { content_name: 'Newsletter Ebook' });
         }
 
-        // Abrir ebook después de 1.5 seg
+        // Abrir ebook después de 1.5 seg (fallback por si bloquean email)
         if (BREVO_CONFIG.ebookUrl && BREVO_CONFIG.ebookUrl !== 'URL_DE_TU_EBOOK') {
           setTimeout(() => window.open(BREVO_CONFIG.ebookUrl, '_blank'), 1500);
         }
